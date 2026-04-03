@@ -2,8 +2,11 @@
 ## Quickstart
 
 git clone https://github.com/<your-username>/meta-reasoning-agentic-systems
+
 cd meta-reasoning-agentic-systems
+
 pip install numpy matplotlib
+
 jupyter notebook notebooks/01_meta_reasoning_loop.ipynb
 
 No additional API keys or external dependencies required.
