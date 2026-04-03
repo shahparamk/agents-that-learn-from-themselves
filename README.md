@@ -42,15 +42,6 @@ This is the failure mode the architecture was designed to prevent. One line. Arc
 
 ---
 
-## The Human Decision Node
-
-The WeightUpdater halts before committing any update and verifies:
-- Is the evaluator reading from ground truth or a proxy?
-- Has signal drift been checked (w_quality >= 0.3)?
-- Is the proposed delta within bounded change threshold?
-
----
-
 ## The Four Components
 
 1. EXECUTOR — performs the primary task and records metadata
