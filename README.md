@@ -75,6 +75,8 @@ This is the failure mode the architecture was designed to prevent. One line. Arc
 │ UPDATER       │                        └──────────────────────┘
 └───────────────┘
 
+```
+
 ## Book Context
 
 This chapter is part of Design of Agentic Systems with Case Studies.
