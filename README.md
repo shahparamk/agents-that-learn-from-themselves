@@ -40,16 +40,35 @@ weight_updater.commit(proposed_update)
 Re-run from Part 2. Observe Design B's quality curve collapse to match Design A's.
 This is the failure mode the architecture was designed to prevent. One line. Architectural, not model-level.
 
+# ═══════════════════════════════════════════════════════════
+# MANDATORY HUMAN DECISION NODE
+# ═══════════════════════════════════════════════════════════
+# The Meta-Reasoner has proposed a weight update.
+#
+# ARCHITECTURAL CONDITION THIS ASSUMES:
+#   The feedback signal is grounded to an external reference
+#   that the Executor cannot influence.
+#
+# BEFORE PROCEEDING — verify:
+#   [x] Is the evaluator reading from ground truth or a proxy?
+#   [x] Has signal drift been checked (w_quality >= 0.3)?
+#   [x] Is the proposed delta within bounded change threshold?
+# ═══════════════════════════════════════════════════════════
+```
+
 ---
 
 ## The Four Components
-
-1. EXECUTOR — performs the primary task and records metadata
-2. EVALUATOR — scores the output against a performance signal
-3. META-REASONER — reads the score and proposes weight updates
-4. WEIGHT UPDATER — commits or halts the update at the Human Decision Node
-
----
+```
+┌──────────┐  output  ┌────────────┐  score  ┌────────────────┐
+│ EXECUTOR │─────────▶│ EVALUATOR  │────────▶│ META-REASONER  │
+└──────────┘          └────────────┘         └───────┬────────┘
+     ▲                                               │ proposed update
+     │                                               ▼
+┌────┴──────────┐                        ┌──────────────────────┐
+│ WEIGHT        │◀───────── approved ────│  HUMAN DECISION NODE │
+│ UPDATER       │                        └──────────────────────┘
+└───────────────┘
 
 ## Book Context
 
