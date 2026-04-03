@@ -60,10 +60,11 @@ This is the failure mode the architecture was designed to prevent. One line. Arc
    
 ```
 
----
 
-## The Four Components
-```
+
+#The Four Components
+
+
 ┌──────────┐  output  ┌────────────┐  score  ┌────────────────┐
 │ EXECUTOR │─────────▶│ EVALUATOR  │────────▶│ META-REASONER  │
 └──────────┘          └────────────┘         └───────┬────────┘
