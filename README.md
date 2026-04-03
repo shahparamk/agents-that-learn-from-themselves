@@ -40,9 +40,10 @@ weight_updater.commit(proposed_update)
 Re-run from Part 2. Observe Design B's quality curve collapse to match Design A's.
 This is the failure mode the architecture was designed to prevent. One line. Architectural, not model-level.
 
- ═══════════════════════════════════════════════════════════
+
 # MANDATORY HUMAN DECISION NODE
- ═══════════════════════════════════════════════════════════
+
+ 
   The Meta-Reasoner has proposed a weight update.
 
 # ARCHITECTURAL CONDITION THIS ASSUMES:
@@ -50,10 +51,13 @@ This is the failure mode the architecture was designed to prevent. One line. Arc
   that the Executor cannot influence.
 
 # BEFORE PROCEEDING — verify:
+
    [x] Is the evaluator reading from ground truth or a proxy?
+   
    [x] Has signal drift been checked (w_quality >= 0.3)?
+   
    [x] Is the proposed delta within bounded change threshold?
- ═══════════════════════════════════════════════════════════
+   
 ```
 
 ---
